@@ -96,6 +96,28 @@ const ChartDetail = () => {
         <div className="glass-card" style={{ marginBottom: '2rem' }}>
           <h2 style={{ fontSize: '1.75rem', marginBottom: '1rem', color: '#c4b5fd', textAlign: 'center' }}>Натальна карта</h2>
           <NatalChartWheel chart={chart} />
+          
+          <div style={{ marginTop: '2rem', padding: '1.5rem', background: 'rgba(139, 92, 246, 0.05)', borderRadius: '12px' }}>
+            <h3 style={{ fontSize: '1.1rem', color: '#c4b5fd', marginBottom: '1rem' }}>Легенда символів планет:</h3>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '0.75rem', fontSize: '0.95rem' }}>
+              <div><span style={{ color: '#fbbf24', fontWeight: 'bold' }}>☉</span> Сонце</div>
+              <div><span style={{ color: '#e0e7ff', fontWeight: 'bold' }}>☽</span> Місяць</div>
+              <div><span style={{ color: '#93c5fd', fontWeight: 'bold' }}>☿</span> Меркурій</div>
+              <div><span style={{ color: '#f9a8d4', fontWeight: 'bold' }}>♀</span> Венера</div>
+              <div><span style={{ color: '#f87171', fontWeight: 'bold' }}>♂</span> Марс</div>
+              <div><span style={{ color: '#fb923c', fontWeight: 'bold' }}>♃</span> Юпітер</div>
+              <div><span style={{ color: '#a78bfa', fontWeight: 'bold' }}>♄</span> Сатурн</div>
+              <div><span style={{ color: '#c4b5fd', fontWeight: 'bold' }}>♅</span> Уран</div>
+              <div><span style={{ color: '#c4b5fd', fontWeight: 'bold' }}>♆</span> Нептун</div>
+              <div><span style={{ color: '#c4b5fd', fontWeight: 'bold' }}>♇</span> Плутон</div>
+              <div><span style={{ color: '#c4b5fd', fontWeight: 'bold' }}>⚷</span> Хірон</div>
+              <div><span style={{ color: '#c4b5fd', fontWeight: 'bold' }}>☊</span> Півн. вузол</div>
+              <div><span style={{ color: '#c4b5fd', fontWeight: 'bold' }}>☋</span> Півд. вузол</div>
+              <div><span style={{ color: '#c4b5fd', fontWeight: 'bold' }}>⚸</span> Ліліт</div>
+              <div><span style={{ color: '#8b5cf6', fontWeight: 'bold' }}>ASC</span> Асцендент</div>
+              <div><span style={{ color: '#8b5cf6', fontWeight: 'bold' }}>MC</span> Середина Неба</div>
+            </div>
+          </div>
         </div>
 
         <Tabs defaultValue="planets" className="w-full">
