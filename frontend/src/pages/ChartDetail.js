@@ -5,6 +5,7 @@ import axios from 'axios';
 import { API } from '@/App';
 import { toast } from 'sonner';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import NatalChartWheel from '@/components/NatalChartWheel';
 
 const ChartDetail = () => {
   const { id } = useParams();
