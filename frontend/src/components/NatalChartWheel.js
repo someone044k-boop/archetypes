@@ -55,14 +55,20 @@ const NatalChartWheel = ({ chart }) => {
     
     // Calculate angle relative to ASC
     // ASC should be at 270° (left side, 9 o'clock)
-    let angle = 270 - (longitude - asc.longitude);
-    
-    // Normalize to 0-360
-    while (angle < 0) angle += 360;
-    while (angle >= 360) angle -= 360;
-    
-    return angle;
-  };
+const longitudeToAngle = (longitude) => {
+  if (!chart.planets) return 0;
+  const asc = chart.planets.find(p => p.name === 'Асцендент');
+  if (!asc) return 0;
+  
+  // ASC на 270° (ліва сторона), будинки проти годинникової
+  let angle = 270 + (longitude - asc.longitude);
+  
+  // Нормалізація до 0-360
+  while (angle < 0) angle += 360;
+  while (angle >= 360) angle -= 360;
+  
+  return angle;
+};
 
   // Calculate point on circle
   const polarToCartesian = (centerX, centerY, radius, angleInDegrees) => {
