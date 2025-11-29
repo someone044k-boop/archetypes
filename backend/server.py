@@ -31,8 +31,8 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 security = HTTPBearer()
 SECRET_KEY = os.environ.get('JWT_SECRET', 'astrology-secret-key-change-in-production')
 
-# Set Swiss Ephemeris path
-swe.set_ephe_path('/app/backend/ephe')
+# Set Swiss Ephemeris path - using default ephemeris
+# swe.set_ephe_path('/app/backend/ephe')
 
 # Create the main app
 app = FastAPI()
