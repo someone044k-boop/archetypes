@@ -93,6 +93,11 @@ const ChartDetail = () => {
           </div>
         </div>
 
+        <div className="glass-card" style={{ marginBottom: '2rem' }}>
+          <h2 style={{ fontSize: '1.75rem', marginBottom: '1rem', color: '#c4b5fd', textAlign: 'center' }}>Натальна карта</h2>
+          <NatalChartWheel chart={chart} />
+        </div>
+
         <Tabs defaultValue="planets" className="w-full">
           <TabsList className="grid w-full grid-cols-3" style={{ background: 'rgba(139, 92, 246, 0.1)', padding: '0.25rem', borderRadius: '12px' }}>
             <TabsTrigger value="planets" data-testid="planets-tab">Планети</TabsTrigger>
