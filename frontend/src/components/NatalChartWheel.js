@@ -46,9 +46,22 @@ const NatalChartWheel = ({ chart }) => {
     'Ліліт': '⚸'
   };
 
-  // Convert longitude to angle (0° Aries = 0°, counterclockwise)
+  // Convert longitude to angle with ASC at 270° (left side)
+  // ASC is at 9 o'clock position, houses go counterclockwise
   const longitudeToAngle = (longitude) => {
-    return 90 - longitude; // Start from top, go counterclockwise
+    if (!chart.planets) return 0;
+    const asc = chart.planets.find(p => p.name === 'Асцендент');
+    if (!asc) return 0;
+    
+    // Calculate angle relative to ASC
+    // ASC should be at 270° (left side, 9 o'clock)
+    let angle = 270 - (longitude - asc.longitude);
+    
+    // Normalize to 0-360
+    while (angle < 0) angle += 360;
+    while (angle >= 360) angle -= 360;
+    
+    return angle;
   };
 
   // Calculate point on circle
